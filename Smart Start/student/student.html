@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Students - Mentoring Platform</title>
+    <link rel="stylesheet" href="student.css">
+    <link rel="stylesheet" href="../nav-user/nav-user.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome with integrity check -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SmartStart - The only way to success. Professional web development, cloud solutions, mobile apps, and data analytics services.">
+    <meta name="keywords" content="web development, cloud solutions, mobile apps, data analytics, digital transformation">
+    <meta name="author" content="SmartStart">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SmartStart - The Only Way to Success">
+    <meta property="og:description" content="Professional digital solutions for your business transformation">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartstart.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwODkxYjIiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTggMkw2IDZIMTBMOCAyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTggMTRMNiAxMEgxMEw4IDE0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPgo=">
+
+    <!-- Performance optimization -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><i class="fas fa-graduation-cap"></i> MentorConnect</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="../dashboard-student/dash-student.html" class="nav-link">Dashboard</a>
+                <a href="../mentor/mentor.php" class="nav-link">Find Mentors</a>
+                <a href="../student/student.html" class="nav-link active">Find Students</a>
+                <a href="#" class="nav-link">My Connections</a>
+                <div class="profile-menu">
+                    <img src="/placeholder.svg?height=40&width=40" alt="Profile" class="profile-avatar">
+                </div>
+            </nav>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h2>Find Students</h2>
+                <p>Connect with motivated students seeking mentorship opportunities</p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="search-section">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search students by name, skills, or interests...">
+                </div>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="skillFilter">Skills</label>
+                        <select id="skillFilter" class="filter-select">
+                            <option value="">All Skills</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="react">React</option>
+                            <option value="design">UI/UX Design</option>
+                            <option value="marketing">Digital Marketing</option>
+                            <option value="data-science">Data Science</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="levelFilter">Experience Level</label>
+                        <select id="levelFilter" class="filter-select">
+                            <option value="">All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="goalFilter">Goals</label>
+                        <select id="goalFilter" class="filter-select">
+                            <option value="">All Goals</option>
+                            <option value="career-change">Career Change</option>
+                            <option value="skill-development">Skill Development</option>
+                            <option value="job-search">Job Search</option>
+                            <option value="entrepreneurship">Entrepreneurship</option>
+                        </select>
+                    </div>
+
+                    <button class="clear-filters" id="clearFilters">
+                        <i class="fas fa-times"></i> Clear Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-info">
+                <span id="resultsCount">24 students found</span>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Students Grid -->
+            <div class="students-grid" id="studentsGrid">
+                <!-- Student cards will be populated by JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    Load More Students
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Connection Modal -->
+    <div class="modal-overlay" id="connectionModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Connect with Student</h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="student-info">
+                    <img id="modalStudentAvatar" src="/placeholder.svg" alt="Student Avatar" class="modal-avatar">
+                    <div>
+                        <h4 id="modalStudentName"></h4>
+                        <p id="modalStudentTitle"></p>
+                    </div>
+                </div>
+                <form class="connection-form">
+                    <label for="connectionMessage">Introduction Message</label>
+                    <textarea id="connectionMessage" placeholder="Write a personalized message to introduce yourself and explain how you can help..."></textarea>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancelConnection">Cancel</button>
+                        <button type="submit" class="btn-primary">Send Connection Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="student.js"></script>
+    <script src="../nav-user/nav-user.js"></script>
+</body>
+
+</html>

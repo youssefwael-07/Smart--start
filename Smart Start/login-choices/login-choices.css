@@ -1,0 +1,337 @@
+ :root {
+            --primary: #254d70;
+            --primary-light: #3a6d9a;
+            --primary-lighter: #4a89c0;
+            --primary-dark: #1e3e5a;
+            --primary-darker: #172f43;
+            --accent: #0891b2;
+            --accent-light: #06b6d4;
+            --accent-lighter: #22d3ee;
+            --background: #0f172a;
+            --background-light: #1e293b;
+            --foreground: #f8fafc;
+            --foreground-muted: #cbd5e1;
+            --border: #334155;
+            --card: #1e293b;
+            --card-hover: #334155;
+            --success: #059669;
+            --warning: #d97706;
+            --error: #dc2626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background);
+            color: var(--foreground);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, var(--background), var(--background-light));
+        }
+
+        .background-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, var(--primary-darker) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, var(--accent) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, var(--primary-dark) 0%, transparent 50%);
+            animation: backgroundPulse 8s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(2deg); }
+        }
+
+        .login-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: containerSlideIn 0.8s ease-out;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes containerSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--foreground);
+            animation: logoFloat 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            opacity: 0.3;
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.1; }
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--foreground), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        .subtitle {
+            color: var(--foreground-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            animation: subtitleFade 1s ease-out 0.3s both;
+        }
+
+        @keyframes subtitleFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .login-btn {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .mentor-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--foreground);
+            border: 2px solid var(--primary-light);
+            animation: mentorSlide 0.6s ease-out 0.4s both;
+        }
+
+        .mentor-btn:hover {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-lighter));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(37, 77, 112, 0.4);
+            border-color: var(--primary-lighter);
+        }
+
+        .mentor-btn:active {
+            transform: translateY(-1px) scale(1.01);
+        }
+
+        .student-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--foreground);
+            border: 2px solid var(--accent-light);
+            animation: studentSlide 0.6s ease-out 0.6s both;
+        }
+
+        .student-btn:hover {
+            background: linear-gradient(135deg, var(--accent-light), var(--accent-lighter));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(8, 145, 178, 0.4);
+            border-color: var(--accent-lighter);
+        }
+
+        .student-btn:active {
+            transform: translateY(-1px) scale(1.01);
+        }
+
+        @keyframes mentorSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes studentSlide {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .login-btn .icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .login-btn:hover .icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .footer {
+            margin-top: 2rem;
+            color: var(--foreground-muted);
+            font-size: 0.9rem;
+            animation: footerFade 1s ease-out 0.8s both;
+        }
+
+        @keyframes footerFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .login-btn {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .login-btn {
+                padding: 0.9rem 1.2rem;
+                font-size: 1rem;
+            }
+        }

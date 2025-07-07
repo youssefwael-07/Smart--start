@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStart - Video Learning Platform</title>
+    <link rel="stylesheet" href="download.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SmartStart - The only way to success. Professional video learning platform for skill development.">
+    <meta name="keywords" content="video learning, online courses, skill development, programming, design">
+    <meta name="author" content="SmartStart">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SmartStart - Video Learning Platform">
+    <meta property="og:description" content="Professional video learning platform for your skill development journey">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwODkxYjIiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTggMkw2IDZIMTBMOCAyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTggMTRMNiAxMEgxMEw4IDE0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPgo=">
+</head>
+
+<body>
+
+    <!-- Main App Container -->
+    <div class="app-container" id="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-container">
+                <div class="logo">SS</div>
+                <h2>Smart<span>Start</span></h2>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-page="featured">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Featured Videos</span>
+                        <div class="nav-indicator"></div>
+                    </li>
+                    <li class="nav-item" data-page="library">
+                        <i class="fas fa-video"></i>
+                        <span>My Library</span>
+                        <div class="nav-indicator"></div>
+                    </li>
+                    <li class="nav-item" data-page="playlists">
+                        <i class="fas fa-list"></i>
+                        <span>Playlists</span>
+                        <div class="nav-indicator"></div>
+                    </li>
+                    <li class="nav-item" data-page="history">
+                        <i class="fas fa-history"></i>
+                        <span>Watch History</span>
+                        <div class="nav-indicator"></div>
+                    </li>
+                    <li class="nav-item" data-page="bookmarks">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Bookmarks</span>
+                        <div class="nav-indicator"></div>
+                    </li>
+                    <li class="nav-item" data-page="analytics">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analytics</span>
+                        <div class="nav-indicator"></div>
+                    </li>
+                    <li class="nav-item" data-page="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                        <div class="nav-indicator"></div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="quick-actions">
+                <button class="quick-action-btn" id="add-video-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Video</span>
+                </button>
+                <button class="quick-action-btn" id="create-playlist-btn">
+                    <i class="fas fa-folder-plus"></i>
+                    <span>New Playlist</span>
+                </button>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">JD</div>
+                <div class="user-info">
+                    <h4>John Doe</h4>
+                    <p>Video Learner</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <!-- Page Content Container -->
+            <div class="page-container" id="page-container">
+                <!-- Featured Videos Page -->
+                <div class="page-content active" id="featured-page">
+                    <!-- Hero Video Section -->
+                    <section class="hero-section" id="hero-section">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Featured Learning Content</h1>
+                            <p class="hero-subtitle">Discover premium educational videos curated for your learning journey</p>
+                        </div>
+
+                        <div class="featured-video" id="featured-video">
+                            <div class="video-player-wrapper">
+                                <div class="video-player" id="hero-video-player">
+                                    <iframe id="hero-iframe" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="video-overlay" id="hero-overlay">
+                                    <div class="play-button" id="hero-play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h2 id="featured-title">Advanced JavaScript Concepts</h2>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-clock"></i> <span id="featured-duration">4:30</span></span>
+                                    <span><i class="fas fa-eye"></i> <span id="featured-views">1.2K</span> views</span>
+                                    <span><i class="fas fa-star"></i> 4.8</span>
+                                </div>
+                                <p id="featured-description">Master advanced JavaScript concepts including closures, prototypes, async/await, and modern ES6+ features.</p>
+                                <div class="video-actions">
+                                    <button class="btn-primary" id="watch-now-btn">
+                                        <i class="fas fa-play"></i> Watch Now
+                                    </button>
+                                    <button class="btn-secondary" id="add-playlist-btn">
+                                        <i class="fas fa-plus"></i> Add to Playlist
+                                    </button>
+                                    <button class="btn-icon" id="share-btn" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                    <button class="btn-icon" id="bookmark-btn" title="Bookmark">
+                                        <i class="fas fa-bookmark"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Continue Learning Section -->
+                    <section class="continue-section">
+                        <h2>Continue Learning</h2>
+                        <div class="continue-cards" id="continue-cards">
+                            <!-- Continue cards will be generated by JavaScript -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- My Library Page -->
+                <div class="page-content" id="library-page">
+                    <div class="page-header">
+                        <h1>My Video Library</h1>
+                        <p>Manage and organize your video collection</p>
+                    </div>
+
+                    <div class="library-controls">
+                        <div class="search-container">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="search-input" placeholder="Search videos...">
+                        </div>
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filter-bar">
+                        <button class="filter-btn active" data-filter="all">All Videos</button>
+                        <button class="filter-btn" data-filter="in-progress">In Progress</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                        <button class="filter-btn" data-filter="new">New</button>
+                        <div class="sort-dropdown">
+                            <button class="sort-btn" id="sort-btn">
+                                <i class="fas fa-sort"></i> Sort: Recent
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="sort-menu" id="sort-menu">
+                                <div class="sort-option active" data-sort="recent">Recent</div>
+                                <div class="sort-option" data-sort="alphabetical">Alphabetical</div>
+                                <div class="sort-option" data-sort="progress">Progress</div>
+                                <div class="sort-option" data-sort="duration">Duration</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-grid" id="video-grid">
+                        <!-- Video cards will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Playlists Page -->
+                <div class="page-content" id="playlists-page">
+                    <div class="page-header">
+                        <h1>My Playlists</h1>
+                        <p>Organize your videos into custom playlists</p>
+                        <button class="btn-primary" id="create-new-playlist">
+                            <i class="fas fa-plus"></i> Create New Playlist
+                        </button>
+                    </div>
+
+                    <div class="playlists-grid" id="playlists-grid">
+                        <!-- Playlists will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Watch History Page -->
+                <div class="page-content" id="history-page">
+                    <div class="page-header">
+                        <h1>Watch History</h1>
+                        <p>Track your learning progress and recently watched videos</p>
+                        <button class="btn-secondary" id="clear-history">
+                            <i class="fas fa-trash"></i> Clear History
+                        </button>
+                    </div>
+
+                    <div class="history-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>24</h3>
+                                <p>Videos Watched</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>12.5h</h3>
+                                <p>Total Watch Time</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>7</h3>
+                                <p>Days Active</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="history-timeline" id="history-timeline">
+                        <!-- History items will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Bookmarks Page -->
+                <div class="page-content" id="bookmarks-page">
+                    <div class="page-header">
+                        <h1>Bookmarked Videos</h1>
+                        <p>Quick access to your saved videos</p>
+                    </div>
+
+                    <div class="bookmarks-grid" id="bookmarks-grid">
+                        <!-- Bookmarked videos will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Analytics Page -->
+                <div class="page-content" id="analytics-page">
+                    <div class="page-header">
+                        <h1>Learning Analytics</h1>
+                        <p>Track your progress and learning insights</p>
+                    </div>
+
+                    <div class="analytics-overview">
+                        <div class="analytics-card">
+                            <div class="card-header">
+                                <h3>Weekly Progress</h3>
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="progress-chart">
+                                <div class="chart-bar" style="height: 60%">
+                                    <span class="bar-label">Mon</span>
+                                </div>
+                                <div class="chart-bar" style="height: 80%">
+                                    <span class="bar-label">Tue</span>
+                                </div>
+                                <div class="chart-bar" style="height: 45%">
+                                    <span class="bar-label">Wed</span>
+                                </div>
+                                <div class="chart-bar" style="height: 90%">
+                                    <span class="bar-label">Thu</span>
+                                </div>
+                                <div class="chart-bar" style="height: 70%">
+                                    <span class="bar-label">Fri</span>
+                                </div>
+                                <div class="chart-bar" style="height: 30%">
+                                    <span class="bar-label">Sat</span>
+                                </div>
+                                <div class="chart-bar" style="height: 50%">
+                                    <span class="bar-label">Sun</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="card-header">
+                                <h3>Learning Streak</h3>
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="streak-info">
+                                <div class="streak-number">12</div>
+                                <div class="streak-text">Days in a row</div>
+                                <div class="streak-goal">Goal: 30 days</div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="card-header">
+                                <h3>Category Breakdown</h3>
+                                <i class="fas fa-pie-chart"></i>
+                            </div>
+                            <div class="category-stats">
+                                <div class="category-item">
+                                    <span class="category-name">Programming</span>
+                                    <div class="category-bar">
+                                        <div class="category-fill" style="width: 65%"></div>
+                                    </div>
+                                    <span class="category-percent">65%</span>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-name">Design</span>
+                                    <div class="category-bar">
+                                        <div class="category-fill" style="width: 25%"></div>
+                                    </div>
+                                    <span class="category-percent">25%</span>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-name">Science</span>
+                                    <div class="category-bar">
+                                        <div class="category-fill" style="width: 10%"></div>
+                                    </div>
+                                    <span class="category-percent">10%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Page -->
+                <div class="page-content" id="settings-page">
+                    <div class="page-header">
+                        <h1>Settings</h1>
+                        <p>Customize your learning experience</p>
+                    </div>
+
+                    <div class="settings-sections">
+                        <div class="settings-section">
+                            <h3>Account Settings</h3>
+                            <div class="setting-item">
+                                <label>Display Name</label>
+                                <input type="text" value="John Doe" class="setting-input">
+                            </div>
+                            <div class="setting-item">
+                                <label>Email</label>
+                                <input type="email" value="john.doe@example.com" class="setting-input">
+                            </div>
+                            <div class="setting-item">
+                                <label>Profile Picture</label>
+                                <button class="btn-secondary">Upload New Picture</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Playback Settings</h3>
+                            <div class="setting-item">
+                                <label>Default Playback Speed</label>
+                                <select class="setting-select">
+                                    <option value="0.5">0.5x</option>
+                                    <option value="0.75">0.75x</option>
+                                    <option value="1" selected>1x</option>
+                                    <option value="1.25">1.25x</option>
+                                    <option value="1.5">1.5x</option>
+                                    <option value="2">2x</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label>Auto-play Next Video</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="autoplay" checked>
+                                    <label for="autoplay" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <label>Video Quality</label>
+                                <select class="setting-select">
+                                    <option value="auto" selected>Auto</option>
+                                    <option value="720p">720p</option>
+                                    <option value="1080p">1080p</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Notifications</h3>
+                            <div class="setting-item">
+                                <label>Email Notifications</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="email-notifications" checked>
+                                    <label for="email-notifications" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <label>Push Notifications</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="push-notifications">
+                                    <label for="push-notifications" class="toggle-label"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Privacy</h3>
+                            <div class="setting-item">
+                                <label>Make Profile Public</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="public-profile">
+                                    <label for="public-profile" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <label>Share Watch History</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="share-history">
+                                    <label for="share-history" class="toggle-label"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-actions">
+                            <button class="btn-primary">Save Changes</button>
+                            <button class="btn-secondary">Reset to Default</button>
+                            <button class="btn-danger">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Video Modal -->
+    <div class="modal-overlay" id="add-video-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Video</h3>
+                <button class="close-btn" id="close-add-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="add-video-form">
+                    <div class="form-group">
+                        <label for="video-url">YouTube URL</label>
+                        <input type="url" id="video-url" placeholder="https://www.youtube.com/watch?v=..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="video-title">Video Title</label>
+                        <input type="text" id="video-title" placeholder="Enter video title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="video-desc">Description</label>
+                        <textarea id="video-desc" placeholder="Enter video description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="video-category">Category</label>
+                        <select id="video-category">
+                            <option value="programming">Programming</option>
+                            <option value="design">Design</option>
+                            <option value="business">Business</option>
+                            <option value="science">Science</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel-add-btn" class="btn-secondary">Cancel</button>
+                <button type="button" id="confirm-add-btn" class="btn-primary">Add Video</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h3 id="modal-video-title">Video Title</h3>
+                <button class="close-btn" id="close-video-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="video-player-container">
+                    <div class="video-player" id="modal-video-player">
+                        <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-details">
+                    <div class="video-meta">
+                        <span><i class="fas fa-clock"></i> <span id="modal-duration">0:00</span></span>
+                        <span><i class="fas fa-eye"></i> <span id="modal-views">0</span> views</span>
+                        <span><i class="fas fa-heart"></i> <span id="modal-likes">0</span> likes</span>
+                    </div>
+                    <div class="video-actions">
+                        <button class="action-btn" id="like-btn">
+                            <i class="fas fa-heart"></i> Like
+                        </button>
+                        <button class="action-btn" id="bookmark-modal-btn">
+                            <i class="fas fa-bookmark"></i> Bookmark
+                        </button>
+                        <button class="action-btn" id="share-modal-btn">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                        <button class="action-btn" id="download-btn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                    <div class="video-description">
+                        <p id="modal-description">Video description will appear here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="download.js"></script>
+</body>
+
+</html>

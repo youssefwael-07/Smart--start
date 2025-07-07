@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Dashboard - Smart Start</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="mentor-dash.css">
+    <!-- Font Awesome with integrity check -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SmartStart - The only way to success. Professional web development, cloud solutions, mobile apps, and data analytics services.">
+    <meta name="keywords" content="web development, cloud solutions, mobile apps, data analytics, digital transformation">
+    <meta name="author" content="SmartStart">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SmartStart - The Only Way to Success">
+    <meta property="og:description" content="Professional digital solutions for your business transformation">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartstart.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwODkxYjIiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTggMkw2IDZIMTBMOCAyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTggMTRMNiAxMEgxMEw4IDE0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPgo=">
+
+    <!-- Performance optimization -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2><i class="fas fa-graduation-cap"></i> Smart Start</h2>
+                <p>Mentor Dashboard</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <i class="fas fa-chart-line"></i> Overview
+                </a>
+                <a href="#earnings" class="nav-item" data-section="earnings">
+                    <i class="fas fa-dollar-sign"></i> Earnings
+                </a>
+                <a href="#sessions" class="nav-item" data-section="sessions">
+                    <i class="fas fa-calendar-alt"></i> Sessions
+                </a>
+                <a href="#students" class="nav-item" data-section="students">
+                    <i class="fas fa-users"></i> Students
+                </a>
+                <a href="#feedback" class="nav-item" data-section="feedback">
+                    <i class="fas fa-star"></i> Feedback
+                </a>
+                <a href="#profile" class="nav-item" data-section="profile">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-title">
+                    <h1 id="page-title">Dashboard Overview</h1>
+                    <p id="page-subtitle">Welcome back, Dr. Sarah Johnson</p>
+                </div>
+                <div class="header-actions">
+                    <button class="notification-bell tooltip" data-tooltip="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="user-profile" id="userProfile">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face" class="user-avatar">
+                        <div class="dropdown" id="dropdown">
+                            <a href="../user/profile-1.php"><i class="fas fa-user"></i> Profile</a>
+                            <a href="../user/settings.php"><i class="fas fa-cog"></i> Settings</a>
+                            <a href="../user/help.php"><i class="fas fa-question-circle"></i> Help</a>
+                            <a href="../user/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section id="overview-section" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Earnings</h3>
+                            <p class="stat-value">$2,450</p>
+                            <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +12% this month</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Sessions Completed</h3>
+                            <p class="stat-value">147</p>
+                            <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +8 this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Active Students</h3>
+                            <p class="stat-value">23</p>
+                            <span class="stat-change neutral"><i class="fas fa-minus"></i> Same as last week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Average Rating</h3>
+                            <p class="stat-value">4.8</p>
+                            <span class="stat-change positive"><i class="fas fa-arrow-up"></i> +0.2 this month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Monthly Earnings</h3>
+                        <canvas id="earningsChart" class="chart-placeholder">Earnings Chart</canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Session Distribution</h3>
+                        <canvas id="sessionsChart" class="chart-placeholder">Sessions Chart</canvas>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Session completed</strong> with Ahmed Hassan</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <div class="activity-amount">+$25</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>New review</strong> from Fatima Al-Zahra</p>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                            <div class="activity-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-calendar-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>New booking</strong> from Omar Khalil</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                            <div class="activity-amount">+$30</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Earnings Section -->
+            <section id="earnings-section" class="content-section">
+                <div class="earnings-header">
+                    <div class="earnings-summary">
+                        <h2>Earnings Overview</h2>
+                        <div class="earnings-total">
+                            <span class="currency">$</span>
+                            <span class="amount" id="totalEarnings">2,450</span>
+                            <span class="period">This Month</span>
+                        </div>
+                    </div>
+                    <div class="earnings-filters">
+                        <select id="earningsFilter">
+                            <option value="month">This Month</option>
+                            <option value="quarter">This Quarter</option>
+                            <option value="year">This Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="earnings-breakdown">
+                    <div class="breakdown-card">
+                        <h4>Session Earnings</h4>
+                        <p class="breakdown-amount">$2,100</p>
+                        <span class="breakdown-percentage">85.7%</span>
+                    </div>
+                    <div class="breakdown-card">
+                        <h4>Bonus Payments</h4>
+                        <p class="breakdown-amount">$250</p>
+                        <span class="breakdown-percentage">10.2%</span>
+                    </div>
+                    <div class="breakdown-card">
+                        <h4>Tips</h4>
+                        <p class="breakdown-amount">$100</p>
+                        <span class="breakdown-percentage">4.1%</span>
+                    </div>
+                </div>
+
+                <div class="earnings-table">
+                    <h3>Recent Transactions</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Student</th>
+                                <th>Session Type</th>
+                                <th>Duration</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsTable">
+                            <tr>
+                                <td>Dec 15, 2024</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=30&h=30&fit=crop&crop=face" alt="Ahmed Hassan" style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border);"> Ahmed
+                                        Hassan
+                                    </div>
+                                </td>
+                                <td>Career Guidance</td>
+                                <td>20 min</td>
+                                <td>$25</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dec 14, 2024</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=30&h=30&fit=crop&crop=face" alt="Fatima Al-Zahra" style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border);"> Fatima
+                                        Al-Zahra
+                                    </div>
+                                </td>
+                                <td>Resume Review</td>
+                                <td>30 min</td>
+                                <td>$35</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dec 13, 2024</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=30&h=30&fit=crop&crop=face" alt="Omar Khalil" style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border);"> Omar
+                                        Khalil
+                                    </div>
+                                </td>
+                                <td>Interview Prep</td>
+                                <td>45 min</td>
+                                <td>$50</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dec 12, 2024</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=30&h=30&fit=crop&crop=face" alt="Layla Mohammed" style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border);">                                        Layla Mohammed
+                                    </div>
+                                </td>
+                                <td>Marketing Strategy</td>
+                                <td>25 min</td>
+                                <td>$30</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dec 11, 2024</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=30&h=30&fit=crop&crop=face" alt="Youssef Ali" style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border);"> Youssef
+                                        Ali
+                                    </div>
+                                </td>
+                                <td>Data Science Path</td>
+                                <td>40 min</td>
+                                <td>$40</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sessions Section -->
+            <section id="sessions-section" class="content-section">
+                <div class="sessions-header">
+                    <h2>Session Management</h2>
+                    <button class="btn-primary" id="addSessionBtn">
+                        <i class="fas fa-plus"></i> Add Availability
+                    </button>
+                </div>
+
+                <div class="sessions-calendar">
+                    <div class="calendar-header">
+                        <button id="prevMonth" class="tooltip" data-tooltip="Previous Month"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="currentMonth">December 2024</h3>
+                        <button id="nextMonth" class="tooltip" data-tooltip="Next Month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="upcoming-sessions">
+                    <h3>Upcoming Sessions</h3>
+                    <div class="session-list">
+                        <div class="session-item">
+                            <div class="session-time">
+                                <span class="date">Dec 16</span>
+                                <span class="time">2:00 PM</span>
+                            </div>
+                            <div class="session-details">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Ahmed Hassan" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent);">
+                                    <div>
+                                        <h4>Career Guidance Session</h4>
+                                        <p>with Ahmed Hassan</p>
+                                    </div>
+                                </div>
+                                <span class="session-type">20 minutes • $25</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn-secondary">Reschedule</button>
+                                <button class="btn-primary">Join</button>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-time">
+                                <span class="date">Dec 17</span>
+                                <span class="time">10:30 AM</span>
+                            </div>
+                            <div class="session-details">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="Layla Mohammed" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent);">
+                                    <div>
+                                        <h4>Resume Review</h4>
+                                        <p>with Layla Mohammed</p>
+                                    </div>
+                                </div>
+                                <span class="session-type">30 minutes • $35</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn-secondary">Reschedule</button>
+                                <button class="btn-primary">Join</button>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-time">
+                                <span class="date">Dec 18</span>
+                                <span class="time">3:15 PM</span>
+                            </div>
+                            <div class="session-details">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=40&h=40&fit=crop&crop=face" alt="Sara Ahmed" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent);">
+                                    <div>
+                                        <h4>Data Science Mentoring</h4>
+                                        <p>with Sara Ahmed</p>
+                                    </div>
+                                </div>
+                                <span class="session-type">45 minutes • $50</span>
+                            </div>
+                            <div class="session-actions">
+                                <button class="btn-secondary">Reschedule</button>
+                                <button class="btn-primary">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Students Section -->
+            <section id="students-section" class="content-section">
+                <div class="students-header">
+                    <h2>My Students</h2>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search students..." id="studentSearch">
+                    </div>
+                </div>
+
+                <div class="students-grid">
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=70&h=70&fit=crop&crop=face" alt="Ahmed Hassan">
+                        </div>
+                        <div class="student-info">
+                            <h4>Ahmed Hassan</h4>
+                            <p>Computer Science Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 5 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $125 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=70&h=70&fit=crop&crop=face" alt="Fatima Al-Zahra">
+                        </div>
+                        <div class="student-info">
+                            <h4>Fatima Al-Zahra</h4>
+                            <p>Business Graduate</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 3 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $90 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=70&h=70&fit=crop&crop=face" alt="Omar Khalil">
+                        </div>
+                        <div class="student-info">
+                            <h4>Omar Khalil</h4>
+                            <p>Engineering Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 2 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $50 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=70&h=70&fit=crop&crop=face" alt="Layla Mohammed">
+                        </div>
+                        <div class="student-info">
+                            <h4>Layla Mohammed</h4>
+                            <p>Marketing Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 4 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $100 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=70&h=70&fit=crop&crop=face" alt="Youssef Ali">
+                        </div>
+                        <div class="student-info">
+                            <h4>Youssef Ali</h4>
+                            <p>Data Science Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 6 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $150 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=70&h=70&fit=crop&crop=face" alt="Sara Ahmed">
+                        </div>
+                        <div class="student-info">
+                            <h4>Sara Ahmed</h4>
+                            <p>Psychology Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 3 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $75 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=70&h=70&fit=crop&crop=face" alt="Nour Hassan">
+                        </div>
+                        <div class="student-info">
+                            <h4>Nour Hassan</h4>
+                            <p>Medical Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 4 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $100 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-avatar">
+                            <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=70&h=70&fit=crop&crop=face" alt="Zaid Mahmoud">
+                        </div>
+                        <div class="student-info">
+                            <h4>Zaid Mahmoud</h4>
+                            <p>Finance Student</p>
+                            <div class="student-stats">
+                                <span><i class="fas fa-calendar"></i> 2 sessions</span>
+                                <span><i class="fas fa-dollar-sign"></i> $50 earned</span>
+                            </div>
+                        </div>
+                        <div class="student-actions">
+                            <button class="btn-secondary">Message</button>
+                            <button class="btn-primary">Schedule</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feedback Section -->
+            <section id="feedback-section" class="content-section">
+                <div class="feedback-header">
+                    <h2>Student Feedback</h2>
+                    <div class="rating-summary">
+                        <div class="overall-rating">
+                            <span class="rating-number">4.8</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(47 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback-list">
+                    <div class="feedback-item">
+                        <div class="feedback-header-item">
+                            <div class="student-info">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Ahmed Hassan">
+                                <div>
+                                    <h4>Ahmed Hassan</h4>
+                                    <span class="feedback-date">2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="feedback-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="feedback-text">
+                            "Dr. Sarah provided excellent career guidance. Her insights about the tech industry were invaluable and helped me understand my career path better."
+                        </p>
+                    </div>
+                    <div class="feedback-item">
+                        <div class="feedback-header-item">
+                            <div class="student-info">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=50&h=50&fit=crop&crop=face" alt="Fatima Al-Zahra">
+                                <div>
+                                    <h4>Fatima Al-Zahra</h4>
+                                    <span class="feedback-date">1 week ago</span>
+                                </div>
+                            </div>
+                            <div class="feedback-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="feedback-text">
+                            "Amazing session! Dr. Sarah helped me improve my resume and gave me practical tips for job interviews. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="feedback-item">
+                        <div class="feedback-header-item">
+                            <div class="student-info">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face" alt="Omar Khalil">
+                                <div>
+                                    <h4>Omar Khalil</h4>
+                                    <span class="feedback-date">2 weeks ago</span>
+                                </div>
+                            </div>
+                            <div class="feedback-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="feedback-text">
+                            "Great mentoring session. Dr. Sarah was very knowledgeable and patient. Looking forward to our next session!"
+                        </p>
+                    </div>
+                    <div class="feedback-item">
+                        <div class="feedback-header-item">
+                            <div class="student-info">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face" alt="Layla Mohammed">
+                                <div>
+                                    <h4>Layla Mohammed</h4>
+                                    <span class="feedback-date">3 weeks ago</span>
+                                </div>
+                            </div>
+                            <div class="feedback-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="feedback-text">
+                            "Excellent guidance on marketing career paths. Dr. Sarah's industry connections and advice were incredibly valuable."
+                        </p>
+                    </div>
+                    <div class="feedback-item">
+                        <div class="feedback-header-item">
+                            <div class="student-info">
+                                <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=50&h=50&fit=crop&crop=face" alt="Sara Ahmed">
+                                <div>
+                                    <h4>Sara Ahmed</h4>
+                                    <span class="feedback-date">1 month ago</span>
+                                </div>
+                            </div>
+                            <div class="feedback-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="feedback-text">
+                            "Dr. Sarah helped me transition into data science successfully. Her technical knowledge and career advice were spot on!"
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile-section" class="content-section">
+                <div class="profile-header">
+                    <h2>Profile Settings</h2>
+                </div>
+                <div class="profile-content">
+                    <form class="profile-form" id="profileForm">
+                        <div class="form-group">
+                            <label>Profile Picture</label>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face" alt="Profile" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--accent);">
+                                <button type="button" class="btn-secondary">Change Photo</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" value="Dr. Sarah Johnson" id="fullName">
+                        </div>
+                        <div class="form-group">
+                            <label>Specialization</label>
+                            <input type="text" value="Software Engineering & Career Development" id="specialization">
+                        </div>
+                        <div class="form-group">
+                            <label>Hourly Rate ($)</label>
+                            <input type="number" value="25" id="hourlyRate">
+                        </div>
+                        <div class="form-group">
+                            <label>Bio</label>
+                            <textarea id="bio" rows="4">Experienced software engineer with 10+ years in the tech industry. Passionate about helping students and graduates navigate their career paths.</textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Floating Action Button -->
+        <button class="floating-action tooltip" data-tooltip="Quick Actions">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+
+    <script src="mentor-dash.js"></script>
+</body>
+
+</html>

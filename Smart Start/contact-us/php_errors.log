@@ -1,0 +1,1 @@
+[05-Jul-2025 15:20:58 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'mentor' in C:\xampp\htdocs\Smart Start\contact-us\db.php on line 7
